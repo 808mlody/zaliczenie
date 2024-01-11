@@ -4,11 +4,80 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-
+        <title>Sklep</title>
+        <link rel="icon" type="image/x-icon" href="/sklepzdj/favicon.ico">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+       
+        <title>Witamy w Naszym Sklepie!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255,244,244);
+            color: #333;
+        }
+
+        header {
+            background-color: rgb(17, 24, 39);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        section {
+            margin: 2rem;
+            text-align: center;
+        }
+
+        .welcome-message {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .shop-now-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .shop-now-button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+ 
+</header>
+
+<section>
+<h1>Witamy w Naszym Sklepie!</h1>
+    <p class="welcome-message">Odkryj unikalne produkty dostępne tylko u nas.</p>
+    <a href="/user/home" class="shop-now-button">Zakupy Teraz</a>
+</section>
+
+
+
+</body>
+</html>
+
 
         <!-- Styles -->
         <style>
@@ -30,15 +99,6 @@
                     @endauth
                 </div>
             @endif
-        
-
- 
-
-
-
-            
-
- 
-
             </body>
-</html>
+            </html>
+ 

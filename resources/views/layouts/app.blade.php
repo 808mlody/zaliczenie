@@ -6,6 +6,15 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <style>
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+            margin-top: auto; /* Ustawia stopkę na dole */
+        }
+    </style>
     <title>{{ config('app.name', 'Sklep') }}</title>
 
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -18,7 +27,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Sklep') }}
+
+                MetroVibeStore
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -66,9 +76,11 @@
 
         <main class="py-4">
             @yield('content')
-            
         </main>
     </div>
-    
+    <footer class="sticky-footer">
+    <p>&copy; 2024 Nasz Sklep. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
 </body>
 </html>

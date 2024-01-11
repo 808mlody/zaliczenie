@@ -12,6 +12,16 @@
 
     <style>
 
+body {
+    /* Gradient poziomy od lewej (czerwony) do prawej (zielony) do niebieskiego */
+    background: linear-gradient(0deg, rgba(172,172,172,1) 0%, rgba(255,255,255,1) 89%);
+    /* Reszta stylów */
+    color: white;
+    background-size: cover;
+    height: 100vh; /* Kolor tekstu na tle gradientu */
+}
+
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;

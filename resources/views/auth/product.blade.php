@@ -11,6 +11,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <style>
+        body {
+    /* Gradient poziomy od lewej (czerwony) do prawej (zielony) do niebieskiego */
+    background: linear-gradient(0deg, rgba(172,172,172,1) 0%, rgba(255,255,255,1) 89%);
+    /* Reszta stylów */
+    color: white;
+    background-size: cover;
+    height: 100vh; /* Kolor tekstu na tle gradientu */
+}
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -102,8 +110,8 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin-top: 20px;
-            margin-bottom: 20px; /* Dodany margines na dole */
-            display: inline-block; /* Dodany styl, aby uniknąć blokowania całego wiersza */
+            margin-bottom: 20px;
+            display: inline-block; 
         }
 
         .show-all-button:hover {
