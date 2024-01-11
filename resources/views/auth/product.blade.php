@@ -102,8 +102,8 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin-top: 20px;
-            margin-bottom: 20px;
-            display: inline-block; 
+            margin-bottom: 20px; /* Dodany margines na dole */
+            display: inline-block; /* Dodany styl, aby uniknąć blokowania całego wiersza */
         }
 
         .show-all-button:hover {
