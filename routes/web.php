@@ -26,3 +26,7 @@ Route::get('/user/home', [App\Http\Controllers\User\HomeController::class, 'inde
 Route::get('/product', [App\Http\Controllers\Auth\AdminController::class, 'product']);
 Route::get('/showproduct', [App\Http\Controllers\Auth\AdminController::class, 'showproduct']);
 Route::post('/uploadproduct', [App\Http\Controllers\Auth\AdminController::class, 'uploadproduct']);
+Route::get('/deleteproduct/{id}', [App\Http\Controllers\Auth\AdminController::class, 'deleteproduct']);
+Route::get('/updateview/{id}', [App\Http\Controllers\Auth\AdminController::class, 'updateview']);
+Route::post('/updateproduct/{id}', [App\Http\Controllers\Auth\AdminController::class, 'updateproduct']);
+Route::post('/addcart/{id}', [App\Http\Controllers\User\HomeController::class, 'addcart']);

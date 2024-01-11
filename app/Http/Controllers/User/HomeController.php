@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Cart;
 
 class HomeController extends Controller
 {
@@ -14,5 +15,27 @@ class HomeController extends Controller
         $products = Product::paginate(3);
 
         return view('user.home', compact('products'));
+    }
+    public function addcart(Request $request, $id)
+    {
+        if(Auth::id())
+        {
+            $user=auth()->user();
+            $product=Product::find($id);
+            $cart=new cart;
+            $cart->name=$user->name;
+            $cart->email=$user->email;
+            $cart->nazwa=$product->nazwa;
+            $cart->cena=$product->cena;
+            $cart->ilosc=$request->ilosc;
+            $cart->save();
+
+            
+            return redirect()->back()->with('message', 'Produkt dodano do koszyka!');
+        }
+        else
+        {
+            return redirect('login');
+        }
     }
 }

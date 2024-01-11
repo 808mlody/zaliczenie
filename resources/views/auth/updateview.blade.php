@@ -122,18 +122,20 @@
                 </button>
             </div>
         @endif
-        <div class="title">Dodaj Produkt</div>
+        <div class="title">Edytuj Produkt</div>
 
-        <form action="{{url('uploadproduct')}}" method="post" enctype="multipart/form-data">
+        <form action="{{url('updateproduct',$products->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             <label for="productName">Nazwa Produktu:</label>
-            <input type="text" id="productName" name="Name" required>
+            <input type="text" id="productName" name="Name" value="{{$products->nazwa}}"required>
             <label for="productPrice">Cena (PLN):</label>
-            <input type="number" id="productPrice" name="Price" required>
+            <input type="number" id="productPrice" name="Price" value="{{$products->cena}}" required>
             <label for="productQuantity">Ilość:</label>
-            <input type="number" id="productQuantity" name="Quantity" required>
-            <label for="productImage">Zdjęcie:</label>
-            <input type="file" id="productImage" name="file" accept="image/*" required>
+            <input type="number" id="productQuantity" name="Quantity" value="{{$products->ilosc}}" required>
+            <label for="productImage">Stare Zdjęcie:</label>
+            <img hight="100" width="100" src="/productimage/{{$products->zdjecie}}">
+            <label for="productImage">Nowe Zdjęcie:</label>
+            <input type="file" id="productImage" name="file" accept="image/*" value="{{$products->zdjecie}}">
             <button type="submit">Wyślij</button>
         </form>
 

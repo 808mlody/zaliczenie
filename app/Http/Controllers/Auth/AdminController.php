@@ -34,4 +34,35 @@ class AdminController extends Controller
         return view('auth.showproduct', ['products' => $products]);
     }
 
+    public function deleteproduct($id)
+    {
+        $products=Product::find($id);
+        $products->delete();
+        return redirect()->back()->with('message', 'Produkt usunięto  pomyślnie!');;
+    }
+
+    public function updateview($id)
+    {
+        $products=Product::find($id);
+        return view('auth.updateview',compact('products'));
+    }
+
+    public function updateproduct(Request $request, $id)
+    {
+        $products=Product::find($id);
+        $image = $request->file;
+
+        if($image)
+        {
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $request->file->move('productimage', $imagename);
+        $products->zdjecie = $imagename;
+        }
+        $products->nazwa = $request->Name;
+        $products->cena = $request->Price;
+        $products->ilosc = $request->Quantity;
+
+        $products->save();
+        return redirect()->back()->with('message', 'Produkt zedytowano pomyślnie!');
+    }
 }
