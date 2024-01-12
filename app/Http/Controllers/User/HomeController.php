@@ -13,8 +13,11 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::paginate(3);
+        $user=auth()->user();
+        $count=cart::where('name',$user->name)->count();
 
-        return view('user.home', compact('products'));
+
+        return view('user.home', compact('products','count'));
     }
     public function addcart(Request $request, $id)
     {
@@ -38,4 +41,15 @@ class HomeController extends Controller
             return redirect('login');
         }
     }
+
+    public function showcart(){
+
+        $user=auth()->user();
+        $cart=cart::where('name',$user->name)->get();
+        $count=cart::where('name',$user->name)->count();
+
+        return view('user.showcart',compact('count','cart'));
+    }
+
+
 }

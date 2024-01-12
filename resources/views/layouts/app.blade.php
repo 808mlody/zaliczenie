@@ -6,6 +6,10 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+
+
+
     <style>
         footer {
             background-color: #333;
@@ -15,7 +19,7 @@
             margin-top: auto; /* Ustawia stopkę na dole */
         }
     </style>
-    <title>{{ config('app.name', 'Sklep') }}</title>
+    <title>MetroVibeStore</title>
 
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -51,10 +55,24 @@
                                 </li>
                             @endif
                         @else
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('showcart')}}">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Cart [{{$count}}]
+                                </a>
+                                </li>
+
+
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
+
+                                
+
+                               
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -62,6 +80,11 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
+                                    
+
+
+
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

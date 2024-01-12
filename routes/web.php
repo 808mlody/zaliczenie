@@ -30,6 +30,6 @@ Route::get('/deleteproduct/{id}', [App\Http\Controllers\Auth\AdminController::cl
 Route::get('/updateview/{id}', [App\Http\Controllers\Auth\AdminController::class, 'updateview']);
 Route::post('/updateproduct/{id}', [App\Http\Controllers\Auth\AdminController::class, 'updateproduct']);
 Route::post('/addcart/{id}', [App\Http\Controllers\User\HomeController::class, 'addcart']);
+Route::get('/showcart', [App\Http\Controllers\User\HomeController::class, 'showcart']);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
